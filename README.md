@@ -19,6 +19,8 @@ Funcionalidad para que los clientes creen y compartan listas de reproducción. S
 ### Seguridad de Contraseñas
 Implementación de una bitácora sobre la tabla de contraseñas para mejorar la seguridad.
 
+![modeloER](https://github.com/WilliamCallao/MuchMusic-Database-Project/blob/main/documentacion/modelo_ER_preview.jpg)
+
 ## Estructura del Repositorio:
 
 ### Bitácora
