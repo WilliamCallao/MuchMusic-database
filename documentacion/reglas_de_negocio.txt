@@ -1,0 +1,18 @@
+# MUCHMUSIC
+
+## Descripción del Problema
+
+Una nueva empresa denominada MuchMusic debe desarrollar una aplicación que debe correr en distintas plataformas, como sabemos una parte imprescindible de una aplicación o sistema es la parte persistente del sistema, es decir su base de datos. 
+
+Se desea almacenar los datos de los distintos artistas ya sea solistas, grupos, dúos y otros artistas a nivel nacional e internacional, de los artistas se desea almacenar los datos como ser nombre artístico, nombre real, fecha de nacimiento, país, si está vigente aún o no. De cada artista se desea almacenar sus habilidades artísticas como ser vocalista, tocar bajo, guitarra, batería u otro, es posible que cada artista tenga más de una habilidad. De cada habilidad se desea guardar mínimamente nombre y descripción de la habilidad. 
+
+Los artistas son parte de una categoría, algunas de ellas son solista, grupo, dúo, Trio, conjunto y otras. De cada categoría interesa guardar nombre y descripción de la misma. De cada categoría de artista, se tiene un conjunto de álbumes que tienen nombre del álbum, año de estreno, empresa o empresas musicales que la produjeron.
+
+Cada álbum tiene un conjunto de canciones, cada canción pertenece a un género musical y una duración en minutos. Asimismo, cada canción puede estar almacenada en un conjunto de formatos como ser MP3, WAV, AIFF y otros. Ojo no hay vídeos en la plataforma.
+Una canción o un álbum, artista pueden ser premiados en distintos eventos de premiación como ser Latin Grammy, Grammy, Billboard y otros por todo el planeta, se desea almacenar en cada caso el año y el premio entregado.
+
+Los clientes para acceder a las canciones, artistas e información de la plataforma deben suscribirse a la misma, de los clientes interesa guardar nombre, fecha de nacimiento, correo electrónico, ciudad, país. A cada cliente se le debe asignar un login y un password para acceder a la plataforma. De cada cliente al suscribirse también se solicita de uno a tres tipos de música (por ejemplo, reguetón) y de uno Hay tres tipos de artistas que le gustan (por ejemplo, Scorpion).
+
+La empresa ofrece a cada cliente por ahora 3 tipos de suscripciones, mensual, semestral y anual. De cada suscripción se desea guardar precio, periodo y forma de pago, la forma de pago puede ser solo dos; por tarjeta de débito y tarjeta de crédito, si es mensual se debe realizar un solo pago en una fecha determinada, si es semestral o anual cada mes se debe pagar en una fecha determinada. En cada En este caso hay fecha de inicio y fecha de fin de la suscripción. Las ofertas que por ahora son tres pueden variar en el tiempo, y se desea guardar el histórico del mismo. Cada cliente suscrito puede crear sus propias listas de canciones interpretadas por determinados artistas, y puede hacer reproducir en la plataforma sin límites, así también pueden compartir la mencionada lista entre los clientes de la plataforma y por la misma aplicación. Cada lista creada debe tener un nombre, una fecha de creación; y también puede ser eliminada en alguna otra fecha. Cada cliente o usuario puede crear 0, 1 o más listas. Cada que la lista se reproduzca por el mismo cliente o uno de los que compartió se debe contar, y con el transcurso del tiempo se podrá tener un ranking de las listas más exitosas de un conjunto de amigos de la plataforma.
+
+
