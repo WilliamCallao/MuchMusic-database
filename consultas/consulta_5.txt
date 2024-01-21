@@ -1,0 +1,39 @@
+/*
+Mostrar la lista de canciones de la lista top del mes de septiembre, de cada
+canción se debe mostrar el nombre o título de la canción, género, artista que la
+interpreta.
+*/
+
+WITH TopPlaylist AS (
+    SELECT 
+        r.ID_PLAYLIST,
+        SUM(r.CANTIDAD_REPRODUCCION) AS TotalReproducciones
+    FROM 
+        reproduccion r
+    WHERE 
+        MONTH(r.FECHA) = 9 -- Mes de septiembre
+    GROUP BY 
+        r.ID_PLAYLIST
+    ORDER BY 
+        TotalReproducciones DESC
+    LIMIT 1
+)
+
+SELECT 
+    c.NOMBRE_CANCION AS "Nombre de la Canción",
+    g.NOMBRE_GENERO AS "Género",
+    a.NOMBRE_ASTISTICO AS "Artista"
+FROM 
+    TopPlaylist tp
+JOIN 
+    playlist_cancion pc ON tp.ID_PLAYLIST = pc.ID_PLAYLIST
+JOIN 
+    cancion c ON pc.ID_CANCION = c.ID_CANCION
+JOIN 
+    cancion_genero cg ON c.ID_CANCION = cg.ID_CANCION
+JOIN 
+    genero g ON cg.ID_GENERO = g.ID_GENERO
+JOIN 
+    artista_cancion ac ON c.ID_CANCION = ac.ID_CANCION
+JOIN 
+    artista a ON ac.ID_ARTISTA = a.ID_ARTISTA;
