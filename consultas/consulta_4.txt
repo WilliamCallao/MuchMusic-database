@@ -1,0 +1,21 @@
+/*
+Mostrar el ranking de las 10 listas más escuchadas del mes de septiembre, junto
+al nombre del usuario del creador de cada una de las 10 listas del ranking.
+*/
+
+SELECT
+    playlist.NOMBRE_PLAYLIST AS Lista_Mas_Escuchada,
+    cliente.NOMBRE_CLIENTE AS Creador_Lista,
+    SUM(reproduccion.CANTIDAD_REPRODUCCION) AS Total_Reproducciones
+FROM
+    reproduccion
+INNER JOIN playlist ON reproduccion.ID_PLAYLIST = playlist.ID_PLAYLIST
+INNER JOIN cliente ON playlist.ID_CLIENTE = cliente.ID_CLIENTE
+WHERE
+    MONTH(reproduccion.FECHA) = 9
+GROUP BY
+    playlist.NOMBRE_PLAYLIST, cliente.NOMBRE_CLIENTE
+ORDER BY
+    Total_Reproducciones DESC
+LIMIT 10;
+
