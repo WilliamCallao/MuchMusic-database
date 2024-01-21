@@ -1,0 +1,15 @@
+/*
+Mostrar la oferta, fecha de inicio y fecha de fin de las suscripciones de Juan
+Pérez. si su modalidad de pago fue al contado o al crédito.
+*/
+
+SELECT s.ID_PAGO, s.FECHA_INICIO_SUSCRIPCION, s.FECHA_FIN_SUSCRIPCION
+FROM cliente c
+JOIN cuenta cu ON c.ID_CLIENTE = cu.ID_CLIENTE
+JOIN suscripcion s ON cu.ID_CUENTA = s.ID_CUENTA
+LEFT JOIN pago_contado pc ON s.ID_PAGO_CONTADO = pc.ID_PAGO_CONTADO
+LEFT JOIN pago_credito pcr ON s.ID_PAGO_CREDITO = pcr.ID_PAGO_CREDITO
+WHERE c.NOMBRE_CLIENTE = 'Juan Pérez'
+AND (pcr.ID_PAGO_CREDITO IS NOT NULL OR pc.ID_PAGO_CONTADO IS NOT NULL);
+
+
