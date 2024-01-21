@@ -1,0 +1,27 @@
+/*
+Mostrar los nombres de los componentes de grupo de Rock latino Maná, la
+procedencia de cada uno (ciudad y país de nacimiento), y que actividad
+que cumple cada uno en el grupo, esto es vocalista, guitarra, etc.
+*/
+
+SELECT
+    a.NOMBRE_ASTISTICO AS Nombre_Artistico,
+    c.NOMBRE_CIUDAD AS Ciudad_Nacimiento,
+    p.NOMBRE_PAIS AS Pais_Nacimiento,
+    h.NOMBRE_HABILIDAD AS Actividad
+FROM
+    grupo g
+INNER JOIN
+    grupo_artista ga ON g.ID_GRUPO = ga.ID_GRUPO
+INNER JOIN
+    artista a ON ga.ID_ARTISTA = a.ID_ARTISTA
+INNER JOIN
+    ciudad c ON a.ID_CIUDAD = c.ID_CIUDAD
+INNER JOIN
+    pais p ON c.ID_PAIS = p.ID_PAIS
+INNER JOIN
+    artista_habilidad ah ON a.ID_ARTISTA = ah.ID_ARTISTA
+INNER JOIN
+    habilidad h ON ah.ID_HABILIDAD = h.ID_HABILIDAD
+WHERE
+    g.NOMBRE_GRUPO = 'Maná';
