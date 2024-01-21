@@ -1,0 +1,14 @@
+/*
+Mostrar las canciones de los álbumes producidos por Sony Music, entre los
+años 2022 a la fecha.
+*/
+SELECT c.NOMBRE_CANCION
+FROM cancion c
+JOIN cancion_album ca ON c.ID_CANCION = ca.ID_CANCION
+JOIN album a ON ca.ID_ALBUM = a.ID_ALBUM
+JOIN productora_album pa ON a.ID_ALBUM = pa.ID_ALBUM
+JOIN productora p ON pa.ID_PRODUCTORA = p.ID_PRODUCTORA
+WHERE p.NOMBRE_PRODUCTORA = 'Sony Music'
+AND a.ANIO_ESTRENO_ALBUM >= 2022;
+
+
