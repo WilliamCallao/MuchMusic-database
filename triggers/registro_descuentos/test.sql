@@ -1,0 +1,10 @@
+SET @cuenta := 4;
+SET @suscripcion := 2;
+SET @inicio := '2023-10-01';
+SET @fin := '2023-11-01';
+
+INSERT INTO CUENTA_SUSCRIPCION (ID_CUENTA, ID_SUSCRIPCION, FECHA_INICIO, FECHA_FIN)
+VALUES (@cuenta, @suscripcion, @inicio, @fin);
+
+SELECT * FROM SUSCRIPCION;
+SELECT * FROM PAGO;
